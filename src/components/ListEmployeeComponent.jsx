@@ -7,6 +7,8 @@ class ListEmployeeComponent extends Component {
     this.state = {
       employees: [],
     };
+
+    this.addEmployee = this.addEmployee.bind(this);
   }
   componentDidMount() {
     EmployeeService.getEmployees().then((res) => {
@@ -14,30 +16,41 @@ class ListEmployeeComponent extends Component {
     });
   }
 
+  addEmployee() {
+    this.props.history.push("/add-employee");
+  }
+
   render() {
     return (
-      <div>
+      <div className="App-ListEmployeeComponent">
         <h2 className="text-center">Employee List</h2>
         <div className="row"></div>
-        <table className="table table-striped table-bordered">
-          <thead>
-            <tr>
-              <th>Employee First Name</th>
-              <th>Employee Last Name</th>
-              <th>Employee Email Id</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.employees.map((employee) => (
-              <tr key={employee.id}>
-                <td>{employee.firstName}</td>
-                <td>{employee.lastName}</td>
-                <td>{employee.emailId}</td>
+        <button className="btn btn-primary" onClick={this.addEmployee}>
+          Add Employee
+        </button>
+        <br />
+        <br />
+        <div className="row">
+          <table className="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>Employee First Name</th>
+                <th>Employee Last Name</th>
+                <th>Employee Email Id</th>
+                <th>Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {this.state.employees.map((employee) => (
+                <tr key={employee.id}>
+                  <td>{employee.firstName}</td>
+                  <td>{employee.lastName}</td>
+                  <td>{employee.emailId}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }

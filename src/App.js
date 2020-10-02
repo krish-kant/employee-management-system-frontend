@@ -1,16 +1,30 @@
 import React from "react";
 // import logo from "./logo.svg";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
+import CreateEmployeeComponent from "./components/CreateEmployeeComponent";
+import FooterComponent from "./components/FooterComponent";
+import HeaderComponent from "./components/HeaderComponent";
 import ListEmployeeComponent from "./components/ListEmployeeComponent";
 
 function App() {
   return (
-    <div className="container">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header> */}
-      <ListEmployeeComponent />
-    </div>
+    <>
+      <Router>
+        <HeaderComponent />
+        <div className="container">
+          <Switch>
+            <Route path="/" exact component={ListEmployeeComponent}></Route>
+            <Route path="/employees" component={ListEmployeeComponent}></Route>
+            <Route
+              path="/add-employee"
+              component={CreateEmployeeComponent}
+            ></Route>
+          </Switch>
+        </div>
+        <FooterComponent />
+      </Router>
+    </>
   );
 }
 
