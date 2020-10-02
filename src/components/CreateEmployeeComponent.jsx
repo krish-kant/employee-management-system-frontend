@@ -59,50 +59,25 @@ class CreateEmployeeComponent extends Component {
                 <h1 className="text-center">Add Employee</h1>
                 <div className="card-body"></div>
                 <form>
-                  <div className="form-group">
-                    <label>First Name:</label>
-                    <input
-                      placeholder="First Name"
-                      name="firstName"
-                      className="form-control"
-                      value={this.state.firstName}
+                  <div className="form-group"><label>First Name:</label>
+                    <input placeholder="First Name"
+                      name="firstName" className="form-control" value={this.state.firstName}
                       onChange={this.firstNameHandler}
                     />
                   </div>
-                  <div className="form-group">
-                    <label>Last Name:</label>
-                    <input
-                      placeholder="Last Name"
-                      name="lastName"
-                      className="form-control"
-                      value={this.state.lastName}
-                      onChange={this.lastNameHandler}
-                    />
+                  <div className="form-group"><label>Last Name:</label>
+                    <input placeholder="Last Name"
+                      name="lastName" className="form-control" value={this.state.lastName}
+                      onChange={this.lastNameHandler} />
                   </div>
-                  <div className="form-group">
-                    <label>Email Address:</label>
-                    <input
-                      placeholder="Email Address"
-                      name="emailId"
-                      className="form-control"
-                      value={this.state.emailId}
+                  <div className="form-group"><label>Email Address:</label>
+                    <input placeholder="Email Address"
+                      name="emailId" className="form-control" value={this.state.emailId}
                       onChange={this.emailIdHandler}
                     />
                   </div>
-
-                  <button
-                    className="btn btn-success"
-                    onClick={this.saveEmployeeHandler}
-                  >
-                    Save
-                  </button>
-                  <button
-                    className="btn btn-danger"
-                    onClick={this.cancelHandler}
-                    style={{ marginLeft: "10px" }}
-                  >
-                    Cancel
-                  </button>
+                  <button className="btn btn-success" onClick={this.saveEmployeeHandler}>Save</button>
+                  <button className="btn btn-danger" onClick={this.cancelHandler} style={{ marginLeft: "10px" }}>Cancel</button>
                   <br />
                   <br />
                 </form>
