@@ -71,12 +71,12 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ## List Employees
 
-![List Employees](employee-list.PNG)
+![List Employees](employee-list.png)
 
 ## Add Employee
 
-![Add Employee](add-employee.PNG)
+![Add Employee](add-employee.png)
 
 ## Update Employee
 
-![Update Employee](update-employee.PNG)
+![Update Employee](update-employee.png)
